@@ -19,7 +19,7 @@ $(function () {
             ).toFixed(1)}</p>
             <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
             <p class="country__row"><span>💰</span>${
-              data.currencies[0].name
+              data.currencies?.[0].name
             }</p>
           </div>
      </article>`);
