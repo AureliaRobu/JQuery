@@ -50,6 +50,7 @@ $(function () {
         });
     }
   };
+
   $(document).on("click", ".country", function () {
     const $countryname = $(this).attr("data-country").toLowerCase();
 
