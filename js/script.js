@@ -31,8 +31,8 @@ $(function () {
 
   //   Dialog popup rendering
   const $popupContainer = $(".popup_container");
-  const renderPopup = function (data) {
-    if ($popupContainer.innerText === "") {
+  const renderPopup = function ([data]) {
+
       $popupContainer
         .append(
           `<div class="popup_text">
@@ -48,7 +48,7 @@ $(function () {
             $popupContainer.html("");
           },
         });
-    }
+
   };
 
   $(document).on("click", ".country", function () {
@@ -56,7 +56,7 @@ $(function () {
 
     $.get(
       `https://restcountries.com/v2/name/${$countryname}`,
-      function ([data]) {
+      function (data) {
         renderPopup(data);
       }
     );
