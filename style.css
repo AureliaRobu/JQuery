@@ -14,7 +14,6 @@ body {
 	color: #555;
 	background-color: #f7f7f7;
 	min-height: 100vh;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -30,9 +29,8 @@ body {
 	/* margin-bottom: 8rem; */
 	display: flex;
 	flex-wrap: wrap;
-
 	font-size: 2rem;
-	opacity: 0;
+	opacity: 1;
 	transition: opacity 1s;
 }
 
@@ -40,9 +38,9 @@ body {
 	background-color: #fff;
 	box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 	font-size: 1.8rem;
-	width: 30rem;
-	border-radius: 0.7rem;
-	margin: 3rem 3rem;
+	width: 300px;
+	border-radius: 7px;
+	margin: 30px 30px;
 	/* overflow: hidden; */
 }
 
@@ -51,7 +49,6 @@ body {
 	width: 100%;
 	position: absolute;
 	top: -4rem;
-
 	text-align: center;
 	font-size: 1.8rem;
 	font-weight: 600;
@@ -65,45 +62,45 @@ body {
 }
 
 .country__img {
-	width: 30rem;
-	height: 17rem;
+	width: 300px;
+	height: 170px;
 	object-fit: cover;
 	background-color: #eee;
-	border-top-left-radius: 0.7rem;
-	border-top-right-radius: 0.7rem;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
 }
 
 .country__data {
-	padding: 2.5rem 3.75rem 3rem 3.75rem;
+	padding: 25px 37.5px 30px 37.5px;
 }
 
 .country__name {
 	font-size: 2.7rem;
-	margin-bottom: 0.7rem;
+	margin-bottom: 7px;
 }
 
 .country__region {
 	font-size: 1.4rem;
-	margin-bottom: 2.5rem;
+	margin-bottom: 25px;
 	text-transform: uppercase;
 	color: #888;
 }
 
 .country__row:not(:last-child) {
-	margin-bottom: 1rem;
+	margin-bottom: 10px;
 }
 
 .country__row span {
 	display: inline-block;
-	margin-right: 2rem;
+	margin-right: 20px;
 	font-size: 2.4rem;
 }
 
 .btn-country {
 	border: none;
 	font-size: 2rem;
-	padding: 2rem 5rem;
-	border-radius: 0.7rem;
+	padding: 20px 50px;
+	border-radius: 7px;
 	color: white;
 	background-color: orangered;
 	cursor: pointer;
@@ -115,13 +112,13 @@ body {
 
 .images img {
 	display: block;
-	width: 80rem;
-	margin: 4rem;
+	width: 800px;
+	margin: 40px;
 }
 
 .images img.parallel {
-	width: 40rem;
-	margin: 2rem;
-	border: 3rem solid white;
+	width: 400px;
+	margin: 20px;
+	border: 30px solid white;
 	box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 }

@@ -3,7 +3,7 @@
 $(function () {
   // Countries rendering
   const $countriesContainer = $("div.countries");
-  const renderCountry = function (index, data) {
+  function renderCountry(index, data) {
     $countriesContainer.append(`
      <div class="country" data-country="${data.name}">
           <img class="country__img" src="${data.flag}" />
@@ -19,7 +19,7 @@ $(function () {
             }</p>
           </div>
      </div>`);
-  };
+  }
   $.get("https://restcountries.com/v2/all", function (data) {
     const dataSliced = data.slice(0, 10);
 
@@ -27,38 +27,35 @@ $(function () {
       renderCountry(index, data);
     });
   });
-  $countriesContainer.css("opacity", 1);
+
+  // Slider
+  $countriesContainer.slick();
 
   //   Dialog popup rendering
   const $popupContainer = $(".popup_container");
-  const renderPopup = function ([data]) {
-
-      $popupContainer
-        .append(
-          `<div class="popup_text">
+  function renderPopup([data]) {
+    $popupContainer
+      .append(
+        `<div class="popup_text">
           <p class="country__row">Borders: ${data.borders}</p>
           <p class="country__row">Capital: ${data.capital}</p>
           <p class="country__row">Calling Codes: ${data.callingCodes}</p>
           <p class="country__row">Area: ${data.area}</p>
           <p class="country__row">Subregion: ${data.subregion}</p>
         </div>`
-        )
-        .dialog({
-          close: function (event, ui) {
-            $popupContainer.html("");
-          },
-        });
-
-  };
+      )
+      .dialog({
+        close: function (event, ui) {
+          $popupContainer.html("");
+        },
+      });
+  }
 
   $(document).on("click", ".country", function () {
     const $countryname = $(this).attr("data-country").toLowerCase();
 
-    $.get(
-      `https://restcountries.com/v2/name/${$countryname}`,
-      function (data) {
-        renderPopup(data);
-      }
-    );
+    $.get(`https://restcountries.com/v2/name/${$countryname}`, function (data) {
+      renderPopup(data);
+    });
   });
 });
