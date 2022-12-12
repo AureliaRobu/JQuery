@@ -3,6 +3,36 @@
 $(function () {
   // Countries rendering
   const $countriesContainer = $("div.countries");
+
+  $.get("https://restcountries.com/v2/all", function (data) {
+    const dataSliced = data.slice(0, 10);
+
+    $.each(dataSliced, function (index, data) {
+      renderCountry(index, data);
+    });
+
+    // Slider
+
+    $countriesContainer.slick({
+      arrows: true,
+      dots: true,
+      adaptiveHeight: true,
+      slidesToShow: 3,
+    });
+  });
+
+  //   Dialog popup rendering
+  const $popupContainer = $(".popup_container");
+
+  $(document).on("click", ".country", function () {
+    const $countryname = $(this).attr("data-country").toLowerCase();
+
+    $.get(`https://restcountries.com/v2/name/${$countryname}`, function (data) {
+      renderPopup(data);
+    });
+  });
+
+  //   Functions
   function renderCountry(index, data) {
     $countriesContainer.append(`
      <div class="country" data-country="${data.name}">
@@ -20,19 +50,7 @@ $(function () {
           </div>
      </div>`);
   }
-  $.get("https://restcountries.com/v2/all", function (data) {
-    const dataSliced = data.slice(0, 10);
 
-    $.each(dataSliced, function (index, data) {
-      renderCountry(index, data);
-    });
-  });
-
-  // Slider
-  $countriesContainer.slick();
-
-  //   Dialog popup rendering
-  const $popupContainer = $(".popup_container");
   function renderPopup([data]) {
     $popupContainer
       .append(
@@ -50,12 +68,4 @@ $(function () {
         },
       });
   }
-
-  $(document).on("click", ".country", function () {
-    const $countryname = $(this).attr("data-country").toLowerCase();
-
-    $.get(`https://restcountries.com/v2/name/${$countryname}`, function (data) {
-      renderPopup(data);
-    });
-  });
 });
