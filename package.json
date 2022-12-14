@@ -26,8 +26,6 @@
     "grunt-postcss": "^0.9.0"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.13",
-    "cssnano": "^5.1.14",
-    "pixrem": "^5.0.0"
+    "autoprefixer": "^9.8.8"
   }
 }

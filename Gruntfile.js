@@ -3,18 +3,26 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     watch: {
+      babel:{
+        files:['js/script.js'],
+        tasks: ['babel']
+      },
       less: {
         files: ["less/*.less"],
         tasks: ["less"],
       },
+      autoprefixer:{
+        files:['dist/style.css'],
+        tasks:['postcss']
+      }
     },
     postcss: {
       options: {
-        map: true,
-        processors: [require("autoprefixer")({ browsers: ["last 1 version"] })],
+                processors: [require('autoprefixer')({overrideBrowserslist: ['last 2 versions', 'ie 9']})],
       },
       dist: {
-        src: "src: css/*.css",
+        src: "dist/*.css",
+        dest:"dist/prefixed.css"
       },
     },
     babel: {
@@ -34,7 +42,7 @@ module.exports = function (grunt) {
           paths: ["less/"],
         },
         files: {
-          "css/style.css": "less/source.less",
+          "dist/style.css": "less/source.less",
         },
       },
     },
@@ -46,5 +54,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
 
   // Default task(s).
-  // grunt.registerTask("default", ["babel"]);
+  grunt.registerTask("default", ["babel", 'less','postcss']);
 };
