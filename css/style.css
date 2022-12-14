@@ -29,6 +29,7 @@ body {
 	/* margin-bottom: 8rem; */
 	display: flex;
 	flex-wrap: wrap;
+	min-width: 0;
 	font-size: 2rem;
 	opacity: 1;
 	transition: opacity 1s;
@@ -39,8 +40,8 @@ body {
 	box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 	font-size: 1.8rem;
 	width: 300px;
-	border-radius: 7px;
-	margin: 30px 30px;
+	border-radius: 0.7rem;
+	margin: 3rem 3rem;
 	/* overflow: hidden; */
 }
 
@@ -66,41 +67,41 @@ body {
 	height: 170px;
 	object-fit: cover;
 	background-color: #eee;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
+	border-top-left-radius: 0.7rem;
+	border-top-right-radius: 0.7rem;
 }
 
 .country__data {
-	padding: 25px 37.5px 30px 37.5px;
+	padding: 2.5rem 3.75rem 3rem 3.75rem;
 }
 
 .country__name {
 	font-size: 2.7rem;
-	margin-bottom: 7px;
+	margin-bottom: 0.7rem;
 }
 
 .country__region {
 	font-size: 1.4rem;
-	margin-bottom: 25px;
+	margin-bottom: 2.5rem;
 	text-transform: uppercase;
 	color: #888;
 }
 
 .country__row:not(:last-child) {
-	margin-bottom: 10px;
+	margin-bottom: 1rem;
 }
 
 .country__row span {
 	display: inline-block;
-	margin-right: 20px;
+	margin-right: 2rem;
 	font-size: 2.4rem;
 }
 
 .btn-country {
 	border: none;
 	font-size: 2rem;
-	padding: 20px 50px;
-	border-radius: 7px;
+	padding: 2rem 5rem;
+	border-radius: 0.7rem;
 	color: white;
 	background-color: orangered;
 	cursor: pointer;
@@ -113,12 +114,12 @@ body {
 .images img {
 	display: block;
 	width: 800px;
-	margin: 40px;
+	margin: 4rem;
 }
 
 .images img.parallel {
 	width: 400px;
-	margin: 20px;
-	border: 30px solid white;
+	margin: 2rem;
+	border: 0.3rem solid white;
 	box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 }
