@@ -12,13 +12,7 @@ $(function () {
     });
 
     // Slider
-
-    $countriesContainer.slick({
-      arrows: true,
-      dots: true,
-      adaptiveHeight: true,
-      slidesToShow: 3,
-    });
+    sliderInit();
   });
 
   //   Dialog popup rendering
@@ -67,5 +61,14 @@ $(function () {
           $popupContainer.html("");
         },
       });
+  }
+
+  function sliderInit() {
+    $countriesContainer.slick({
+      arrows: true,
+      dots: true,
+      adaptiveHeight: true,
+      slidesToShow: 3,
+    });
   }
 });
