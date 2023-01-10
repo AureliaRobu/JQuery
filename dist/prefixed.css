@@ -11,7 +11,7 @@ body {
   line-height: 1;
 }
 .countries.slick-slider {
-  width: 90%;
+  max-width: 800px;
   position: relative;
   margin: 3rem 3rem;
 }
@@ -31,6 +31,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 3rem;
+  max-width: 70%;
   height: 300px;
   padding: 3rem;
   margin-bottom: 2rem;
@@ -80,7 +81,7 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: #ffffff;
-  stroke: #087f5b;
+  stroke: #343a40;
   border: none;
   cursor: pointer;
 }
@@ -115,7 +116,13 @@ body {
   list-style: none;
 }
 .slick-dots li.slick-active button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   background-color: #087f5b;
+  border: 2px solid #087f5b;
+  cursor: pointer;
 }
 .slick-dots li button {
   font-size: 0;
